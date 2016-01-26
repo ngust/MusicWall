@@ -1,0 +1,22 @@
+
+<h1>Post a Song</h1>
+<hr/>
+
+
+<form method="post" .form-horizontal action="/music">
+<div>
+    <label .control-label>Title:</label>
+    <input type="text" name="title" value="<%= @musics.title %>">
+  </div>
+<div>
+    <label>Author:</label>
+     <input type="text" name="author" value="<%= @musics.author %>">
+  </div>
+  <div>
+    <label>URL:</label>
+    <input type="text" name="url" value="<%= @musics.url %>">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>

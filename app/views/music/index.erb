@@ -1,0 +1,11 @@
+
+<h1>Here is the music</h1>
+
+<% @musics.each do |music| %>
+  <div class="music">
+    <h3><%= music.title %></h3><small>(by: <%= music.author %>)</small>
+    <p>
+      <a href="<%= music.url %>"><%= music.url %></a>
+    </p>
+  </div>
+<% end %>
