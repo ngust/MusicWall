@@ -4,3 +4,4 @@ class AddUserToMusic < ActiveRecord::Migration
     add_foreign_key :musics, :users
   end
 end
+

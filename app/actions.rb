@@ -75,6 +75,25 @@ post '/signup' do
   else
     redirect '/signup'
   end
+end
+
+post '/music/:musicid/upvotes' do
+  upvote = Vote.new(music_id: params[:musicid], user_id: session[:user_id])
+  if upvote.valid?
+    upvote.save
+    puts "upvoted!!!!!!!!!!"
+  else
+    puts "not ------> upvoted!!!!!!!!!!"
+    puts upvote.errors.full_messages
+  # if Vote.where(music_id: params[:musicid], user_id: session[:user_id]).empty?
+    # Vote.create(music_id: params[:musicid], user_id: session[:user_id])
+    # # @music = Music.find(params[:musicid])
+    # # @music.upvotes = Vote.where(music_id: params[:musicid]).count
+    # # @music.save
+    # puts "upvoted!!!!!!!!!!"
+    # redirect '/music'
+  end
+  redirect '/music'
+end
 
   
-end

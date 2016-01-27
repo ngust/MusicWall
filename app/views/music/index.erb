@@ -1,11 +1,24 @@
 
 <h1>Here is the music</h1>
 
-<% @musics.each do |music| %>
-  <div class="music">
-    <h3><%= music.title %></h3><small>(by: <%= music.author %>)</small>
-    <p>
-      <a href="<%= music.url %>"><%= music.url %></a>
-    </p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
+      <% @musics.each do |music| %>
+      <hr class="star-light">
+      <div class="post-preview">
+        <h3><%= music.title %></h3><small>(by: <%= music.author %>)</small>
+        <p>
+        <!-- <div id="upvote"><form action="/music/<%= music.id %>/upvotes" method="post"><img src=/images/arrow-up.png width="24"></form></div> -->
+        <div id="upvote"><form action="/music/<%= music.id %>/upvotes" method="post" ><input type="image" src=/images/arrow-up.png width="24" ></form></div>
+          <a href="<%= music.url %>"><%= music.url %></a>
+        </p>
+        <p>
+        <% test = User.find_by id: music.user_id %>
+        Submitted by: <%= test.username %>
+        </p>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

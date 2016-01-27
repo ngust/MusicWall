@@ -4,19 +4,26 @@
 
 
 <form method="post" .form-horizontal action="/music">
-<div>
-    <label .control-label>Title:</label>
-    <input type="text" name="title" value="<%= @musics.title %>">
+<div class="form-group">
+  <!-- <label class="col-md-4 control-label" for="textinput">Title:</label>   -->
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Song Title" class="form-control input-md">
   </div>
-<div>
-    <label>Author:</label>
-     <input type="text" name="author" value="<%= @musics.author %>">
+</div>
+<div class="form-group">
+  <!-- <label class="col-md-4 control-label" for="textinput">Title:</label>   -->
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Song Author" class="form-control input-md">
   </div>
-  <div>
-    <label>URL:</label>
-    <input type="text" name="url" value="<%= @musics.url %>">
+</div>
+<div class="form-group">
+  <!-- <label class="col-md-4 control-label" for="textinput">Title:</label>   -->
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="URL Link" class="form-control input-md">
   </div>
-  <div>
+</div>
+<div class="col-md-4">
     <input type="submit" value="Submit">
+    </div>
   </div>
 </form>
