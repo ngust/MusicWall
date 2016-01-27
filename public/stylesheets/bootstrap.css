@@ -4,13 +4,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-#upvote {
-  float: left;
-  /*background-color: yellow*/;
-  height: 24px;
-  width: 24px;
-  padding-right: 30px;
-}
 
 html {
   font-family: sans-serif;
@@ -1100,7 +1093,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: white;
+  color: black;
   background-color: gray;
 }
 input,

@@ -1,21 +1,27 @@
-
 <h1>Here is the music</h1>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
       <% @musics.each do |music| %>
-      <hr class="star-light">
+      <% num_votes = Vote.group(:music_id).count %>
+      <% submitted = User.find_by id: music.user_id %>
+
+      <hr>
       <div class="post-preview">
         <h3><%= music.title %></h3><small>(by: <%= music.author %>)</small>
         <p>
-        <!-- <div id="upvote"><form action="/music/<%= music.id %>/upvotes" method="post"><img src=/images/arrow-up.png width="24"></form></div> -->
+        <div id="vote_count">
+        <%= if num_votes[music.id]
+              num_votes[music.id]
+            else 0
+            end
+          %></div>
         <div id="upvote"><form action="/music/<%= music.id %>/upvotes" method="post" ><input type="image" src=/images/arrow-up.png width="24" ></form></div>
           <a href="<%= music.url %>"><%= music.url %></a>
         </p>
         <p>
-        <% test = User.find_by id: music.user_id %>
-        Submitted by: <%= test.username %>
+        Submitted by: <%= submitted.username %>
         </p>
       </div>
       <% end %>

@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 
-   <link href="/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="http://font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+  <link href="http://font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/custom.css" rel="stylesheet">
 
   <title>Nick's Music</title>
 </head>
@@ -49,9 +50,12 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout"><%= logged_in %></a></li>
         <li><a href="http://www.soundcloud.com">Soundcloud</a></li>
+        <% if current_user %>
+        <li><a href="/logout">Welcome back, <%= current_user[:username].capitalize %></a></li>
+        <% else %>
         <li><a href="/login">Login</a></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
